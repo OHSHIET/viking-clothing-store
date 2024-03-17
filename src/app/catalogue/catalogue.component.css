@@ -1,0 +1,30 @@
+.content {
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    height: 100%;
+}
+
+.product {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 30px;
+    border: 2px solid black;
+    background: #4b4a4a;
+}
+
+#description {
+    margin-left: 15px;
+    color: white;
+    text-decoration: transparent !important;
+    padding: 5px;
+}
+
+#description > *, a:-webkit-any-link {
+    color: white;
+    text-decoration: none !important;
+}

@@ -1,0 +1,33 @@
+.content {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.all {
+    display: flex;
+    flex-direction: row;
+}
+
+.img {
+    margin-right: 35px;
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.mainbutton button {
+    font-size: 20px !important;
+    padding: 14px 35px 14px 35px;
+}
+
+.review {
+    font-size: 17px;
+}
+
+.user {
+    font-size: 20px;
+}

@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Nova+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+:root {
+    --main-color: #c1501b;
+}
+
+a {
+    color: orange;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: #5e5d5c;
+    color: white;
+    overflow: hidden;
+}
+
+/* override angular material css..... */
+body.mat-typography {
+    font: inherit !important;
+    letter-spacing: inherit !important;
+}
+
+.mainbutton button {
+    background-color: var(--main-color) !important;
+    text-shadow: 0 0 1px !important;
+    font-family: "Inconsolata", monospace !important;
+}

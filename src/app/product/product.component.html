@@ -1,0 +1,44 @@
+<div class="content">
+    <div class="all">
+        <img class="img" src="{{product.image}}" width="350" alt="image" />
+        <div class="desc">
+            <h2>{{ product.name }}</h2>
+            <div>Size: {{ product. size}}</div>
+            <div>Type: {{product.type}}</div>
+            <div>Manufacturer: {{product.manufacturer}}</div>
+            <div>Price: {{product.price}}$</div>
+        </div>
+    </div>
+
+    <div *ngIf="loggedIn" style="margin: 20px auto">
+        <div class="mainbutton">
+            <div *ngIf="removeItem">
+                <a (click)="removeFromCart()">
+                    <button mat-raised-button>Remove from cart</button>
+                </a>
+            </div>
+            <div *ngIf="!removeItem">
+                <a href="/cart" (click)="addToCart()">
+                    <button mat-raised-button>Add to cart</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="rev">
+        <ul>
+            <div *ngFor="let review of product.reviews" class="review">
+                <li>
+                    <div class="user">
+                        <a [routerLink]="['/user', review.user.id]">
+                            {{review.user.name}}
+                        </a> says:
+                    </div>
+                    <div class="text">
+                        {{review.review_text}}
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </div>
+</div>

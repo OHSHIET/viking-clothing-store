@@ -1,0 +1,19 @@
+<div class="all">
+
+    <div>
+        <form (ngSubmit)="onSubmit()" [formGroup]='signupForm'>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" formControlName="username" type="text">
+                <label for="password">Password</label>
+                <input class="form-control" formControlName="password" type="password">
+                <label for="email">Email</label>
+                <input class="form-control" formControlName="email" type="email">
+            </div>
+            <div class="mainbutton button">
+                <button [disabled]="!signupForm.valid" mat-raised-button type="submit">Sign up</button>
+            </div>
+        </form>
+    </div>
+
+</div>

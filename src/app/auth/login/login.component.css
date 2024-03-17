@@ -1,0 +1,23 @@
+.all {
+    padding: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group > *:not(label) {
+    margin-bottom: 15px;
+}
+
+.mainbutton button {
+    padding: 0 30px 0 30px;
+    margin-bottom: 25px;
+    font-size: 17px;
+}
+
+.signup {
+    font-family: monospace;
+    font-size: 17px;
+}

@@ -1,0 +1,61 @@
+<div class="all">
+
+    <div class="maininfo">
+        <h1 class="name"><b>Name:</b> {{ user?.name }}</h1>
+        <div><b>Email:</b> {{user?.email }}</div>
+        <div><b>Surname:</b> {{ user?.surname }}</div>
+        <div><b>Phone:</b> {{user?.phone}}</div>
+        <div><b>Address:</b> {{user?.address}}</div>
+    </div>
+
+    <div *ngIf="sameUser" class="edit">
+        <h2 class="editheading">Edit info:</h2>
+        <form (ngSubmit)="editUser()" [formGroup]='editForm'>
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <input class="form-control" formControlName="surname" type="text">
+                <label for="phone">Phone</label>
+                <input class="form-control" formControlName="phone" type="text">
+                <label for="address">Address</label>
+                <input class="form-control" formControlName="address" type="text">
+                <label for="email">Email</label>
+                <input class="form-control" formControlName="email" type="email">
+
+            </div>
+            <div class="mainbutton button">
+                <button mat-raised-button type="submit">Edit</button>
+            </div>
+        </form>
+    </div>
+
+    <div *ngIf="staticUser" class="staticuser">
+        <h1>reviews:</h1>
+        <ul>
+            <div *ngFor="let review of user?.reviews" class="review">
+                <li>
+                    <div class="product">
+                        about <a [routerLink]="['/product', review.product.id]">
+                            {{review.product.name}}
+                        </a>:
+                    </div>
+                    <div class="text">
+                        {{review.review_text}}
+                    </div>
+                </li>
+            </div>
+        </ul>
+
+        <h1>favorite:</h1>
+        <ol>
+            <div *ngFor="let favorite of user?.favorite" class="favorite">
+                <li>
+                    <div class="product">
+                        <a [routerLink]="['/product', favorite.id]">
+                            {{favorite.name}}
+                        </a>
+                    </div>
+                </li>
+            </div>
+        </ol>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="all">
+    <h1>Search</h1>
+    <input type="text" [(ngModel)]="searchText" (input)="performSearch()" placeholder="Search...">
+    <ul>
+        <div *ngIf="searchResults.length === 0">
+            <li>Nothing found!</li>
+        </div>
+        <li *ngFor="let result of searchResults">
+            <a [routerLink]="['/product', result.id]">
+                {{ result.name }}
+            </a>
+        </li>
+    </ul>
+</div>

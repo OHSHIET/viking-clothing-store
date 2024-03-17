@@ -1,0 +1,19 @@
+<div class="all">
+
+    <div>
+        <form (ngSubmit)="onSubmit()" [formGroup]='loginForm'>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" formControlName="username" type="text">
+                <label for="password">Password</label>
+                <input class="form-control" formControlName="password" type="password">
+            </div>
+            <div class="mainbutton button">
+                <button [disabled]="!loginForm.valid" mat-raised-button type="submit">Login</button>
+            </div>
+        </form>
+    </div>
+
+
+    <a class="signup" href="auth/signup">Dont have an account? Sign up</a>
+</div>

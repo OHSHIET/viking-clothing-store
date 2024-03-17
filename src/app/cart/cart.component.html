@@ -1,0 +1,42 @@
+<div class="all">
+    <div *ngIf="!loggedIn">
+        log in to view your cart
+    </div>
+
+    <div *ngIf="loggedIn">
+        <h1>your cart:</h1>
+        <div *ngIf="cart.length === 0">
+            Your cart is empty!
+        </div>
+        <div *ngIf="cart.length">
+            <div class="searchbox">
+                <input class="searchcart" type="text" [(ngModel)]="searchString" (input)="filterCart()"
+                    placeholder="Search...">
+                <div *ngIf="searchString.length !== 0 && cartFiltered.length === 0" class="search-error">
+                    Nothing found!
+                </div>
+            </div>
+            <div *ngIf="price !== 0">
+                <h2>total price: {{price}}$</h2>
+            </div>
+            <div class="items">
+                <div *ngFor="let item of ((cartFiltered.length !== 0) ? cartFiltered : cart)" class="item">
+                    <a href="product/{{item.id}}">
+                        <img src="{{item.image}}" width="100" />
+                    </a>
+                    <div class="desc">
+                        <h2>
+                            <a class="nonlink" href="product/{{item.id}}">{{item.name}}</a>
+                        </h2>
+                        <div class="itemprice">
+                            <span>{{item.price}}$</span>
+                        </div>
+                        <a class="clickable" (click)="removeItem(item.id)">
+                            remove item
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
